@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Medicine Unit-II | Ghulam Muhammad Mahar Medical College Sukkur</title>
+
+  <meta name="description"
+        content="Official academic and clinical website of the Department of Medicine Unit-II, Ghulam Muhammad Mahar Medical College Sukkur.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #064e3b;
+      --primary-light: #0f766e;
+      --secondary: #0ea5a5;
+      --accent: #d4af37;
+      --bg: #f7faf9;
+      --white: #ffffff;
+      --text: #16332d;
+      --muted: #657973;
+      --border: #dfe9e6;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 18px rgba(0,0,0,.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 19px;
+      box-shadow: 0 6px 18px rgba(6,78,59,.25);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .brand-text span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(14,165,165,.20), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(212,175,55,.13), transparent 28%),
+        linear-gradient(135deg, #042f2e 0%, #064e3b 50%, #0f766e 100%);
+      color: white;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.11);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .hero::before {
+      width: 380px;
+      height: 380px;
+      right: -100px;
+      top: 70px;
+    }
+
+    .hero::after {
+      width: 250px;
+      height: 250px;
+      left: -100px;
+      bottom: 30px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 90px 22px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 15px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 40px;
+      background: rgba(255,255,255,.08);
+      font-size: 13px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 1.04;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #e7c95c;
+    }
+
+    .hero-subtitle {
+      max-width: 760px;
+      font-size: 20px;
+      color: rgba(255,255,255,.84);
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.4);
+      color: white;
+      background: rgba(255,255,255,.05);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.14);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 65px;
+      max-width: 900px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      padding-top: 25px;
+    }
+
+    .hero-stat {
+      padding-right: 20px;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .hero-stat span {
+      font-size: 12px;
+      color: rgba(255,255,255,.68);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 90px 22px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-tag {
+      color: var(--secondary);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      max-width: 800px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 5vw, 52px);
+      color: var(--primary);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 800px;
+      font-size: 17px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    .about-card {
+      background: linear-gradient(145deg, #064e3b, #0f766e);
+      border-radius: 25px;
+      color: white;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 22px 55px rgba(6,78,59,.18);
+    }
+
+    .about-card::after {
+      content: "+";
+      position: absolute;
+      right: -15px;
+      bottom: -80px;
+      font-size: 300px;
+      line-height: 1;
+      color: rgba(255,255,255,.05);
+    }
+
+    .about-card h3 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .about-card p {
+      color: rgba(255,255,255,.82);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* FACULTY */
+
+    .faculty {
+      background: #edf5f2;
+    }
+
+    .faculty-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .faculty-card {
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      transition: .35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 45px rgba(6,78,59,.10);
+    }
+
+    .faculty-card::before {
+      content: "";
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .faculty-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #e7f5f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      margin-bottom: 22px;
+    }
+
+    .faculty-card h3 {
+      color: var(--primary);
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .faculty-role {
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .faculty-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 18px;
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      border-color: #9ed7cb;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.06);
+    }
+
+    .service-number {
+      font-family: Georgia, serif;
+      font-size: 13px;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .service-card h3 {
+      color: var(--primary);
+      font-size: 21px;
+      margin: 12px 0 8px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ACADEMICS */
+
+    .academic {
+      background: #052f2d;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .academic .section-title {
+      color: white;
+    }
+
+    .academic .section-intro {
+      color: rgba(255,255,255,.72);
+    }
+
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+      margin-top: 45px;
+    }
+
+    .academic-item {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 17px;
+      background: rgba(255,255,255,.05);
+    }
+
+    .academic-item h3 {
+      color: #e7c95c;
+      margin-bottom: 8px;
+    }
+
+    .academic-item p {
+      color: rgba(255,255,255,.73);
+      font-size: 14px;
+    }
+
+    /* VISION */
+
+    .vision-box {
+      padding: 55px;
+      background: white;
+      border-radius: 25px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(0,0,0,.05);
+      text-align: center;
+    }
+
+    .vision-box blockquote {
+      max-width: 850px;
+      margin: auto;
+      font-family: Georgia, serif;
+      font-size: clamp(25px, 4vw, 38px);
+      line-height: 1.4;
+      color: var(--primary);
+    }
+
+    .vision-box p {
+      margin-top: 22px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #031f1e;
+      color: white;
+      padding: 50px 22px 28px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 50px;
+      align-items: end;
+    }
+
+    .footer-title {
+      font-family: Georgia, serif;
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .footer-text {
+      color: rgba(255,255,255,.65);
+      font-size: 14px;
+      max-width: 570px;
+    }
+
+    .footer-domain {
+      text-align: right;
+      font-size: 20px;
+      font-weight: bold;
+      color: #e7c95c;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 35px auto 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 22px;
+      color: rgba(255,255,255,.45);
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2,1fr);
+        gap: 25px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faculty-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .academic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-domain {
+        text-align: left;
+      }
+    }
+
+    @media(max-width: 500px) {
+      section {
+        padding: 70px 18px;
+      }
+
+      .hero-inner {
+        padding: 75px 18px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .vision-box {
+        padding: 35px 22px;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+
+    <a class="brand" href="#">
+      <div class="brand-logo">M2</div>
+      <div class="brand-text">
+        <strong>Medical2GMC</strong>
+        <span>Department of Medicine Unit-II</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#faculty">Faculty</a></li>
+      <li><a href="#services">Clinical Services</a></li>
+      <li><a href="#academics">Academics</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Ghulam Muhammad Mahar Medical College • Sukkur
+    </div>
+
+    <h1>
+      Department of<br>
+      <span>Medicine Unit-II</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Advancing clinical medicine through patient-centered care,
+      postgraduate education, academic excellence and evidence-based
+      medical practice.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#about" class="btn btn-primary">Explore the Department</a>
+      <a href="#services" class="btn btn-outline">Clinical Services</a>
+    </div>
+
+    <div class="hero-stats">
+
+      <div class="hero-stat">
+        <strong>Indoor</strong>
+        <span>Medical Services</span>
+      </div>
+
+      <div class="hero-stat">
+        <strong>OPD</strong>
+        <span>Clinical Care</span>
+      </div>
+
+      <div class="hero-stat">
+        <strong>HDU</strong>
+        <span>Advanced Monitoring</span>
+      </div>
+
+      <div class="hero-stat">
+        <strong>Endoscopy</strong>
+        <span>GI Procedures</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <div class="section-tag">About Medicine Unit-II</div>
+
+        <h2 class="section-title">
+          Clinical medicine strengthened by academic excellence.
+        </h2>
+
+        <p>
+          The Department of Medicine Unit-II at Ghulam Muhammad Mahar
+          Medical College, Sukkur is a dedicated academic and clinical
+          department committed to high standards of patient care,
+          postgraduate training, bedside teaching and evidence-based medicine.
+        </p>
+
+        <p>
+          The department provides comprehensive evaluation and management
+          of acute and chronic medical illnesses while maintaining a strong
+          emphasis on systematic clinical assessment, diagnostic reasoning,
+          appropriate investigations, treatment and continuity of care.
+        </p>
+
+        <p>
+          Alongside its clinical responsibilities, Medicine Unit-II provides
+          an active learning environment for postgraduate trainees and medical
+          students through seminars, case discussions, bedside teaching,
+          journal reviews and structured academic activities.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <h3>Our Approach</h3>
+
+        <p>
+          Medicine Unit-II integrates clinical experience with contemporary
+          medical knowledge. Every patient encounter is also an opportunity
+          for observation, critical thinking, teaching and continued
+          professional development.
+        </p>
+
+        <br>
+
+        <p>
+          Our goal is to develop clinicians who combine strong diagnostic
+          skills, compassionate patient care and sound evidence-based
+          decision-making.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="faculty" id="faculty">
+
+  <div class="container">
+
+    <div class="section-tag">Leadership & Faculty</div>
+
+    <h2 class="section-title">
+      Guided by experienced physicians and medical educators.
+    </h2>
+
+    <p class="section-intro">
+      The department's clinical and academic activities are led by senior
+      faculty committed to patient care, postgraduate education and the
+      advancement of clinical medicine.
+    </p>
+
+    <div class="faculty-grid">
+
+      <div class="faculty-card">
+
+        <div class="faculty-icon">⚕</div>
+
+        <h3>Professor Dr. Saleh Muhammad Channa</h3>
+
+        <div class="faculty-role">
+          Head of Department
+        </div>
+
+        <p>
+          Leading the Department of Medicine Unit-II with emphasis on
+          clinical excellence, academic development and structured
+          postgraduate medical training.
+        </p>
+
+      </div>
+
+
+      <div class="faculty-card">
+
+        <div class="faculty-icon">⚕</div>
+
+        <h3>Professor Dr. Iftikhar Ali Shah</h3>
+
+        <div class="faculty-role">
+          Professor of Medicine
+        </div>
+
+        <p>
+          Senior faculty member contributing to clinical medicine,
+          postgraduate supervision, bedside teaching and the academic
+          activities of Medicine Unit-II.
+        </p>
+
+      </div>
+
+
+      <div class="faculty-card">
+
+        <div class="faculty-icon">⚕</div>
+
+        <h3>Associate Professor Dr. Basheer Ahmed Chandio</h3>
+
+        <div class="faculty-role">
+          Associate Professor of Medicine
+        </div>
+
+        <p>
+          Contributing to patient management, clinical education,
+          postgraduate training and the continuing academic development
+          of the department.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="services">
+
+  <div class="container">
+
+    <div class="section-tag">Clinical Services</div>
+
+    <h2 class="section-title">
+      Comprehensive clinical care under one medical unit.
+    </h2>
+
+    <p class="section-intro">
+      Medicine Unit-II provides inpatient, outpatient and specialized
+      clinical services with emphasis on careful assessment, appropriate
+      investigation and evidence-based management.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+
+        <div class="service-number">01</div>
+
+        <h3>Indoor Medical Services</h3>
+
+        <p>
+          Inpatient evaluation, investigation, monitoring and treatment
+          of patients requiring admission for acute and chronic medical
+          illnesses.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-number">02</div>
+
+        <h3>Outpatient Department</h3>
+
+        <p>
+          Clinical consultation, diagnostic assessment, treatment,
+          follow-up and long-term management of medical conditions.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-number">03</div>
+
+        <h3>High Dependency Unit</h3>
+
+        <p>
+          Focused observation and closer clinical monitoring for patients
+          requiring a higher level of medical supervision and management.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-number">04</div>
+
+        <h3>Endoscopy Suite</h3>
+
+        <p>
+          Dedicated facilities for upper gastrointestinal endoscopic
+          evaluation as part of the department's diagnostic services.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-number">05</div>
+
+        <h3>Colonoscopy</h3>
+
+        <p>
+          Lower gastrointestinal endoscopic assessment supporting the
+          diagnosis and evaluation of gastrointestinal disorders.
+        </p>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-number">06</div>
+
+        <h3>Clinical Teaching</h3>
+
+        <p>
+          Bedside teaching and case-based learning focused on clinical
+          examination, diagnostic reasoning and practical patient
+          management.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="academic" id="academics">
+
+  <div class="container">
+
+    <div class="section-tag">Academic Medicine</div>
+
+    <h2 class="section-title">
+      Training the next generation of physicians.
+    </h2>
+
+    <p class="section-intro">
+      Postgraduate education is a central component of Medicine Unit-II.
+      Clinical work is integrated with continuous academic discussion,
+      research awareness and structured teaching.
+    </p>
+
+    <div class="academic-grid">
+
+      <div class="academic-item">
+
+        <h3>Postgraduate Seminar Room</h3>
+
+        <p>
+          A dedicated environment for postgraduate teaching, seminars,
+          presentations, case discussions and academic meetings.
+        </p>
+
+      </div>
+
+
+      <div class="academic-item">
+
+        <h3>Case Presentations</h3>
+
+        <p>
+          Structured clinical discussions designed to strengthen
+          history-taking, examination, differential diagnosis and
+          management planning.
+        </p>
+
+      </div>
+
+
+      <div class="academic-item">
+
+        <h3>Journal & Evidence Review</h3>
+
+        <p>
+          Review of contemporary medical literature to encourage
+          evidence-based practice and critical appraisal of medical
+          research.
+        </p>
+
+      </div>
+
+
+      <div class="academic-item">
+
+        <h3>Research & Professional Development</h3>
+
+        <p>
+          Encouraging research awareness, scientific discussion,
+          postgraduate development and continuous improvement in
+          clinical practice.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <div class="container">
+
+    <div class="vision-box">
+
+      <div class="section-tag">Our Philosophy</div>
+
+      <blockquote>
+        “Where clinical experience, academic learning and compassionate
+        patient care come together.”
+      </blockquote>
+
+      <p>
+        Department of Medicine Unit-II • Ghulam Muhammad Mahar Medical College Sukkur
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+
+      <div class="footer-title">
+        Department of Medicine Unit-II
+      </div>
+
+      <div class="footer-text">
+        Ghulam Muhammad Mahar Medical College, Sukkur.<br>
+        Dedicated to clinical medicine, postgraduate education,
+        academic development and patient care.
+      </div>
+
+    </div>
+
+    <div class="footer-domain">
+      Medical2GMC.com
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> Department of Medicine Unit-II.
+    All rights reserved.
+  </div>
+
+</footer>
+
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
